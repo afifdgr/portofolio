@@ -44,7 +44,7 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                     <div class="col-sm-10">
                                         <img id="showImage" class="rounded avatar-lg"
-                                            src="{{ !empty($homeSlide->home_slide) ? url('upload/home_slide/' . $homeSlide->home_slide) : url('upload/no_image.jpg') }}"
+                                            src="{{ !empty($homeSlide->home_slide) ? url($homeSlide->home_slide) : url('upload/no_image.jpg') }}"
                                             alt="Card image cap">
                                     </div>
                                 </div>
