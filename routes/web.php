@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\HomeSliderController;
 
 /*
@@ -41,12 +42,22 @@ Route::controller(AdminController::class)->middleware(['auth', 'verified'])->gro
     Route::post('/update/password', 'updatePassword')->name('update.password');
 });
 
-// Home Slide All Route
+// Home Slide Route (Dashboard)
 Route::controller(HomeSliderController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/home/slide', 'homeSlider')->name('home.slide');
     Route::post('/update/slider', 'updateSlider')->name('update.slider');
 });
 
+// About Route (Dashboard)
+Route::controller(AboutController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/about/page', 'aboutPage')->name('about.page');
+    Route::post('/update/about', 'updateAbout')->name('update.about');
+});
+
+// About Route (Frontend)
+Route::controller(AboutController::class)->group(function () {
+    Route::get('/about', 'homeAbout')->name('home.about');
+});
 
 
 require __DIR__ . '/auth.php';

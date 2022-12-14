@@ -8,78 +8,7 @@
         <!-- banner-area-end -->
 
         <!-- about-area -->
-        <section id="aboutSection" class="about">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <ul class="about__icons__wrap">
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/xd_light.png') }}"
-                                    alt="XD">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/xd.png') }}" alt="XD">
-                            </li>
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/skeatch_light.png') }}"
-                                    alt="Skeatch">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/skeatch.png') }}"
-                                    alt="Skeatch">
-                            </li>
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/illustrator_light.png') }}"
-                                    alt="Illustrator">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/illustrator.png') }}"
-                                    alt="Illustrator">
-                            </li>
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/hotjar_light.png') }}"
-                                    alt="Hotjar">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/hotjar.png') }}"
-                                    alt="Hotjar">
-                            </li>
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/invision_light.png') }}"
-                                    alt="Invision">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/invision.png') }}"
-                                    alt="Invision">
-                            </li>
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/photoshop_light.png') }}"
-                                    alt="Photoshop">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/photoshop.png') }}"
-                                    alt="Photoshop">
-                            </li>
-                            <li>
-                                <img class="light" src="{{ asset('assets/frontend/img/icons/figma_light.png') }}"
-                                    alt="Figma">
-                                <img class="dark" src="{{ asset('assets/frontend/img/icons/figma.png') }}"
-                                    alt="Figma">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about__content">
-                            <div class="section__title">
-                                <span class="sub-title">01 - About me</span>
-                                <h2 class="title">I have transform your ideas into remarkable digital products</h2>
-                            </div>
-                            <div class="about__exp">
-                                <div class="about__exp__icon">
-                                    <img src="{{ asset('assets/frontend/img/icons/about_icon.png') }}" alt="">
-                                </div>
-                                <div class="about__exp__content">
-                                    <p>20+ Years Experience In this game, Means <br> Product Designing</p>
-                                </div>
-                            </div>
-                            <p class="desc">I love to work in User Experience & User Interface designing. Because I
-                                love to solve the design problem and find easy and better solutions to solve it. I
-                                always try my best to make good user interface with the best user experience. I have
-                                been working as a UX Designer</p>
-                            <a href="about.html" class="btn">Download my resume</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        @include('frontend.home_all.home_about')
         <!-- about-area-end -->
 
         <!-- services-area -->
@@ -111,8 +40,7 @@
                                     <img class="light"
                                         src="{{ asset('assets/frontend/img/icons/services_light_icon01.png') }}"
                                         alt="">
-                                    <img class="dark"
-                                        src="{{ asset('assets/frontend/img/icons/services_icon01.png') }}"
+                                    <img class="dark" src="{{ asset('assets/frontend/img/icons/services_icon01.png') }}"
                                         alt="">
                                 </div>
                                 <h3 class="title"><a href="services-details.html">Business Strategy</a></h3>
@@ -140,8 +68,7 @@
                                     <img class="light"
                                         src="{{ asset('assets/frontend/img/icons/services_light_icon02.png') }}"
                                         alt="">
-                                    <img class="dark"
-                                        src="{{ asset('assets/frontend/img/icons/services_icon02.png') }}"
+                                    <img class="dark" src="{{ asset('assets/frontend/img/icons/services_icon02.png') }}"
                                         alt="">
                                 </div>
                                 <h3 class="title"><a href="services-details.html">Brand Strategy</a></h3>
@@ -169,8 +96,7 @@
                                     <img class="light"
                                         src="{{ asset('assets/frontend/img/icons/services_light_icon03.png') }}"
                                         alt="">
-                                    <img class="dark"
-                                        src="{{ asset('assets/frontend/img/icons/services_icon03.png') }}"
+                                    <img class="dark" src="{{ asset('assets/frontend/img/icons/services_icon03.png') }}"
                                         alt="">
                                 </div>
                                 <h3 class="title"><a href="services-details.html">Product Design</a></h3>
@@ -198,8 +124,7 @@
                                     <img class="light"
                                         src="{{ asset('assets/frontend/img/icons/services_light_icon04.png') }}"
                                         alt="">
-                                    <img class="dark"
-                                        src="{{ asset('assets/frontend/img/icons/services_icon04.png') }}"
+                                    <img class="dark" src="{{ asset('assets/frontend/img/icons/services_icon04.png') }}"
                                         alt="">
                                 </div>
                                 <h3 class="title"><a href="services-details.html">Visual Design</a></h3>
@@ -227,8 +152,7 @@
                                     <img class="light"
                                         src="{{ asset('assets/frontend/img/icons/services_light_icon02.png') }}"
                                         alt="">
-                                    <img class="dark"
-                                        src="{{ asset('assets/frontend/img/icons/services_icon02.png') }}"
+                                    <img class="dark" src="{{ asset('assets/frontend/img/icons/services_icon02.png') }}"
                                         alt="">
                                 </div>
                                 <h3 class="title"><a href="services-details.html">Web Development</a></h3>
