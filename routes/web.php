@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
 
 /*
@@ -66,6 +67,24 @@ Route::controller(AboutController::class)->middleware(['auth', 'verified'])->gro
 // About Route (Frontend)
 Route::controller(AboutController::class)->group(function () {
     Route::get('/about', 'homeAbout')->name('home.about');
+});
+
+// Portfolio Route (Dashboard)
+Route::controller(PortfolioController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/all/portfolio', 'allPortfolio')->name('all.portfolio');
+    Route::get('/add/portfolio', 'addPortfolio')->name('add.portfolio');
+    Route::post('/store/portfolio', 'storePortfolio')->name('store.portfolio');
+
+    Route::get('/edit/portfolio/{id}', 'editPortfolio')->name('edit.portfolio');
+    Route::post('/update/portfolio', 'updatePortfolio')->name('update.portfolio');
+
+    Route::get('/delete/portfolio/{id}', 'deletePortfolio')->name('delete.portfolio');
+});
+
+// Portfolio Route (Frontend)
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('/portfolio', 'homePortfolio')->name('home.portfolio');
+    Route::get('/portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
 });
 
 
