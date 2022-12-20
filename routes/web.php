@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\Home\BlogCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +87,38 @@ Route::controller(PortfolioController::class)->middleware(['auth', 'verified'])-
 Route::controller(PortfolioController::class)->group(function () {
     Route::get('/portfolio', 'homePortfolio')->name('home.portfolio');
     Route::get('/portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
+});
+
+// Blog Category Route (Dashboard)
+Route::controller(BlogCategoryController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/all/blog/category', 'allBlogCategory')->name('all.blog.category');
+    Route::get('/add/blog/category', 'addBlogCategory')->name('add.blog.category');
+    Route::post('/store/blog/category', 'storeBlogCategory')->name('store.blog.category');
+
+    Route::get('/edit/blog/category/{id}', 'editBlogCategory')->name('edit.blog.category');
+    Route::post('/update/blog/category', 'updateBlogCategory')->name('update.blog.category');
+
+    Route::get('/delete/blog/category/{id}', 'deleteBlogCategory')->name('delete.blog.category');
+});
+
+// Blog Route (Dashboard)
+Route::controller(BlogController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/all/blog', 'allBlog')->name('all.blog');
+    Route::get('/add/blog', 'addBlog')->name('add.blog');
+    Route::post('/store/blog', 'storeBlog')->name('store.blog');
+
+    Route::get('/edit/blog/{id}', 'editBlog')->name('edit.blog');
+    Route::post('/update/blog', 'updateBlog')->name('update.blog');
+
+    Route::get('/delete/blog/{id}', 'deleteBlog')->name('delete.blog');
+});
+
+// Blog Route (Frontend)
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/blog/details/{id}', 'blogDetails')->name('blog.details');
+    Route::get('/category/blog/{id}', 'categoryBlog')->name('category.blog');
+
+    Route::get('/blog', 'homeBlog')->name('home.blog');
 });
 
 
