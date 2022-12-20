@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\BlogCategoryController;
@@ -119,6 +120,12 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/category/blog/{id}', 'categoryBlog')->name('category.blog');
 
     Route::get('/blog', 'homeBlog')->name('home.blog');
+});
+
+//Footer Route (Dashboard)
+Route::controller(FooterController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/footer/setup', 'footerSetup')->name('footer.setup');
+    Route::post('/update/footer', 'updateFooter')->name('update.footer');
 });
 
 
